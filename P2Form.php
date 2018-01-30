@@ -16,6 +16,16 @@ $meat[] = new Item(11,"Steak",2);
 $extras[] = new Item(14,"Croutons",0);
 $extras[] = new Item(12,"Cheddar Cheese",.25);
 $extras[] = new Item(13,"Feta Cheese",.5);
+$db = array();
+foreach ($greens as $i) {
+  $db[] = $i;
+}foreach ($veggies as $i) {
+  $db[] = $i;
+}foreach ($meat as $i) {
+  $db[] = $i;
+}foreach ($extras as $i) {
+  $db[] = $i;
+}
 class Item
 {
     public $ID = 0;
@@ -82,7 +92,7 @@ if (!isset($_POST['submit'])) //if nothing is ordered, print the menu
         <option value="8">8</option>
       </select>&nbsp;
       <input type = "submit" name = "submit" value ="Submit Order">
-    	</form>   ';
+    	</form>';
         }//if statement to generate menu + order form
 		else
         {
@@ -91,10 +101,12 @@ if (!isset($_POST['submit'])) //if nothing is ordered, print the menu
                 if(!empty($_POST['menuItems'])) {
                     $sum = 5.99;
                     foreach($_POST['menuItems'] as $value){
-                    //pull values of the checkboxes
-                    //echo "value : ".$value.'<br/>';
-
-                      $sum += $value;//Add up the total
+                      foreach ($db as $item) {
+                        if ($value==$item->ID) {
+                          $sum += $item->Price;
+                          $salad[] = $item->Name;
+                        }
+                      }
                     }//end of foreach
                 }//end of if
             }//end of if
@@ -102,6 +114,7 @@ if (!isset($_POST['submit'])) //if nothing is ordered, print the menu
             $subtotal = $sum;
             $tax = $sum*.096;
             $total = $subtotal + $tax;
+            echo implode(', ',$salad).'<br>';
             echo 'Subtotal: $' . number_format($sum, 2) . '';
             echo '<br>';
             echo 'Tax: $' . number_format($tax, 2) . '';
@@ -113,16 +126,17 @@ if (!isset($_POST['submit'])) //if nothing is ordered, print the menu
         }//items ordered, display totals
 
 function createMenu($tempItem){
+    $i = $tempItem->ID;
     $p = $tempItem->Price;
     echo'
-    <input type="checkbox" name="menuItems[]" value="'.$p.'">' . $tempItem->Name . '
+    <input type="checkbox" name="menuItems[]" value="'.$i.'">' . $tempItem->Name . '
     ';
     if ($p!= 0) {
       $d = 0;
       if (floor($p)!= $p) {
           $d = 2;
       }
-      echo '$'.number_format($p,$d);
+    echo '$'.number_format($p,$d);
     }
 }
 /*
