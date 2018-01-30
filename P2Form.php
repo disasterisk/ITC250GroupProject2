@@ -11,11 +11,11 @@ $veggies[] = new Item(7,"Bell Pepper",0);
 $veggies[] = new Item(8,"Mushroom",0);
 $meat[] = new Item(9,"Chicken",1.5);
 $meat[] = new Item(10,"Salmon",1.5);
-$meat[] = new Item(11,"Steak",2);
 $meat[] = new Item(15,"Shrimp",1.5);
+$meat[] = new Item(11,"Steak",2);
+$extras[] = new Item(14,"Croutons",0);
 $extras[] = new Item(12,"Cheddar Cheese",.25);
 $extras[] = new Item(13,"Feta Cheese",.5);
-$extras[] = new Item(14,"Croutons",0);
 class Item
 {
     public $ID = 0;
@@ -36,7 +36,10 @@ if (!isset($_POST['submit'])) //if nothing is ordered, print the menu
         {
             echo '
             <form action = "' . $_SERVER['PHP_SELF'] . '"  method = "POST"> ';
-
+            echo '
+            <h1>Salads</h1>
+            <h2>$5.99</h2>
+            ';
             foreach($greens as $tempItem)
             {
                 createMenu($tempItem);
@@ -83,12 +86,14 @@ if (!isset($_POST['submit'])) //if nothing is ordered, print the menu
         }//if statement to generate menu + order form
 		else
         {
+          $salad = array();
             if(isset($_POST['submit'])){
                 if(!empty($_POST['menuItems'])) {
                     $sum = 5.99;
                     foreach($_POST['menuItems'] as $value){
                     //pull values of the checkboxes
                     //echo "value : ".$value.'<br/>';
+
                       $sum += $value;//Add up the total
                     }//end of foreach
                 }//end of if
@@ -108,9 +113,17 @@ if (!isset($_POST['submit'])) //if nothing is ordered, print the menu
         }//items ordered, display totals
 
 function createMenu($tempItem){
+    $p = $tempItem->Price;
     echo'
-    <input type="checkbox" name="menuItems[]" value="' . $tempItem->Price . '">' . $tempItem->Name . '
+    <input type="checkbox" name="menuItems[]" value="'.$p.'">' . $tempItem->Name . '
     ';
+    if ($p!= 0) {
+      $d = 0;
+      if (floor($p)!= $p) {
+          $d = 2;
+      }
+      echo '$'.number_format($p,$d);
+    }
 }
 /*
 echo '<form action="P2Form.php" method="post">
