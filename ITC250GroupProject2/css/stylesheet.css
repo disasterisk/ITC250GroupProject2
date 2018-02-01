@@ -1,0 +1,86 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	width: 100%;
+	font-family: 'Noto Sans';
+	font-size: 1em;
+	line-height: 25px;
+	letter-spacing: 1.3px;
+	color: #5C636D;
+	text-align: center;
+}
+
+form{
+	display: inline-block;
+    margin-top: 40px;
+}
+
+p{
+	font-weight: lighter;
+	font-size: 0.8em;
+	color:#41BF7B;
+}
+.welcome{
+	font-size: 2em;
+	margin-top: 20px;
+	text-align: center; 
+	margin-bottom: 40px;
+}
+
+.order{
+	font-size: 1.5em;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.button{
+	color: #fff;
+    background: #41BF7B;
+    border: 1px solid #41BF7B;
+    border-radius: 10px;
+    padding: 6px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+ 
+}
+
+
+.saladone{
+	float: right;
+	margin-right: 150px;
+	margin-top: 60px;
+	clear: both;
+	width: 120px;
+	transform: skewY(4.5deg);
+    transform-origin: 100%;
+    display: inline-block;
+}
+
+
+.saladtwo{
+	float: left;
+	margin-left: 130px;
+	margin-top: 50px;
+	clear: both;
+	width: 140px;
+	transform: skewY(-2.5deg);
+    transform-origin: 100%;
+    display: inline-block;
+}
+
+
+.taco{
+	float: right;
+	margin-right: 140px;
+	margin-top: 80px;
+	clear: both;
+	width: 150px;
+	transform: skewY(4.5deg);
+    transform-origin: 100%;
+    display: inline-block;
+}
