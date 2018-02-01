@@ -9,7 +9,7 @@
 <body>
     <img src="img/saladone.png" alt="saladone" class="saladone">
     <img src="img/saladtwo.png" alt="saladtwo" class="saladtwo">
-    <img src="img/taco.png" alt="taco" class="taco">
+    <img src="img/saladthree.png" alt="saladthree" class="saladthree">
   <?php
   //saladTruck.php
   define('THIS_PAGE', basename($_SERVER['PHP_SELF']));
