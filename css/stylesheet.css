@@ -54,8 +54,6 @@ input{
 }
 
 .saladone{
-	/*float: right;*/
-	/*margin-right: 10px;*/
 	margin-top: 60px;
 	clear: both;
 	width: 120px;
@@ -65,9 +63,6 @@ input{
 }
 
 .saladtwo{
-/*	float: left;
-	margin-left: 130px;
-	margin-top: 50px;*/
 	clear: both;
 	width: 140px;
 	transform: skewY(-2.5deg);
@@ -75,12 +70,10 @@ input{
     display: inline-block;
 }
 
-.taco{
-	/*float: right;
-	margin-right: 140px;*/
+.saladthree{
 	margin-top: 80px;
 	clear: both;
-	width: 150px;
+	width: 130px;
 	transform: skewY(4.5deg);
     transform-origin: 100%;
     display: inline-block;
