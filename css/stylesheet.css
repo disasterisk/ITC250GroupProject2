@@ -1,6 +1,6 @@
 *{
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;	
 }
 
 body{
@@ -13,27 +13,32 @@ body{
 	text-align: center;
 }
 
+h1{
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+h2{
+	margin-bottom: 20px;
+	color: #41BF7B;
+}
+
+h3{
+	margin-bottom: 20px;
+}
+
 form{
-	display: inline-block;
-    margin-top: 40px;
-}
-
-p{
-	font-weight: lighter;
-	font-size: 0.8em;
-	color:#41BF7B;
-}
-.welcome{
-	font-size: 2em;
-	margin-top: 20px;
-	text-align: center; 
-	margin-bottom: 40px;
-}
-
-.order{
-	font-size: 1.5em;
-	margin-top: 20px;
+	/*background-color: red;*/
 	text-align: center;
+}
+
+input{
+	font-weight: bold;
+}
+
+
+.subtotal {
+	margin-top: 20px;
 }
 
 .button{
@@ -46,13 +51,11 @@ p{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
- 
 }
 
-
 .saladone{
-	float: right;
-	margin-right: 150px;
+	/*float: right;*/
+	/*margin-right: 10px;*/
 	margin-top: 60px;
 	clear: both;
 	width: 120px;
@@ -61,11 +64,10 @@ p{
     display: inline-block;
 }
 
-
 .saladtwo{
-	float: left;
+/*	float: left;
 	margin-left: 130px;
-	margin-top: 50px;
+	margin-top: 50px;*/
 	clear: both;
 	width: 140px;
 	transform: skewY(-2.5deg);
@@ -73,10 +75,9 @@ p{
     display: inline-block;
 }
 
-
 .taco{
-	float: right;
-	margin-right: 140px;
+	/*float: right;
+	margin-right: 140px;*/
 	margin-top: 80px;
 	clear: both;
 	width: 150px;
